@@ -148,25 +148,25 @@ footer {
 
 /* Specifikke billeder for hver type vin */
 .tile-mousserende{
-  background-image: url('/vinwebside/image/menubox_index/menu_moussernde.png');
+  background-image: url('vinwebside/image/menubox_index/menu_moussernde.png');
 }
 .tile-hvid {
-  background-image: url('/vinwebside/image/menubox_index/menu_hvid.png');
+  background-image: url('vinwebside/image/menubox_index/menu_hvid.png');
 }
 .tile-orange {
-  background-image: url('/vinwebside/image/menubox_index/menu_orange.png');
+  background-image: url('vinwebside/image/menubox_index/menu_orange.png');
 }
 .tile-rose {
-  background-image: url('/vinwebside/image/menubox_index/menu_rose.png');
+  background-image: url('vinwebside/image/menubox_index/menu_rose.png');
 }
 .tile-rod{
-  background-image: url('/vinwebside/image/menubox_index/menu_rod.png')
+  background-image: url('vinwebside/image/menubox_index/menu_rod.png')
 }
 .tile-dessert {
-  background-image: url('/vinwebside/image/menubox_index/menu_dessert.png');
+  background-image: url('vinwebside/image/menubox_index/menu_dessert.png');
 }
 .tile-vinhus {
-  background-image: url('/vinwebside/image/menubox_index/menu_vinhuse.png');
+  background-image: url('vinwebside/image/menubox_index/menu_vinhuse.png');
 }
 
 
