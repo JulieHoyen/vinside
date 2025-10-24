@@ -81,26 +81,6 @@ header nav a:focus {
   padding: 10px 20px;
 }
 
-.wine-menu {
-  display: flex;                 
-  justify-content: center;       
-  align-items: center;
-  gap: 1rem;                     
-  padding: 0.5rem 1rem;
-  background-color: transparent;    
-
-}
-
-.wine-menu img {
-  height: 30px;                  
-  width: auto;                   
-  transition: transform 0.2s ease;
-}
-
-.wine-menu img:hover {
-  transform: scale(1.1);         /* lille zoom-effekt */
-  cursor: pointer;
-}
 
 .logo img {
   height: 70px;
@@ -118,9 +98,16 @@ header nav a:focus {
 
 
 footer {
-  color: #F8F5ED;
+  color: #000000;
   justify-content: flex-end;
-  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color:transparent ;
+  text-align: left;
+  padding: 10px;
+  
 }
 
 /******************index***************/
@@ -130,7 +117,7 @@ footer {
 }
 
 .tile {
-  display: flex;                     /* så vi kan centrere teksten */
+  display: flex;                    
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -141,32 +128,31 @@ footer {
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;          /* så flasken passer i knappen */
-
+  background-size: contain;          
 }
 
 
 /* Specifikke billeder for hver type vin */
 .tile-mousserende{
-  background-image: url('vinwebside/image/menubox_index/menu_moussernde.png');
+  background-image: url('vinwebside/image/menubox_index/menu_moussernde.webp');
 }
 .tile-hvid {
-  background-image: url('vinwebside/image/menubox_index/menu_hvid.png');
+  background-image: url('vinwebside/image/menubox_index/menu_hvid.webp');
 }
 .tile-orange {
-  background-image: url('vinwebside/image/menubox_index/menu_orange.png');
+  background-image: url('vinwebside/image/menubox_index/menu_orange.webp');
 }
 .tile-rose {
-  background-image: url('vinwebside/image/menubox_index/menu_rose.png');
+  background-image: url('vinwebside/image/menubox_index/menu_rose.webp');
 }
 .tile-rod{
-  background-image: url('vinwebside/image/menubox_index/menu_rod.png')
+  background-image: url('vinwebside/image/menubox_index/menu_rod.webp')
 }
 .tile-dessert {
-  background-image: url('vinwebside/image/menubox_index/menu_dessert.png');
+  background-image: url('vinwebside/image/menubox_index/menu_dessert.webp');
 }
-.tile-vinhus {
-  background-image: url('vinwebside/image/menubox_index/menu_vinhuse.png');
+.tile-om_os {
+  background-image: url('vinwebside/image/menubox_index/menu_om_os.webp');
 }
 
 
@@ -191,7 +177,7 @@ footer {
 
 @font-face {
   font-family: "Oregano";
-  src: url(/vinwebside/fonts/Oregano-Regular.ttf) format("truetype");
+  src: url(vinwebside/fonts/Oregano-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -205,7 +191,7 @@ footer {
 
 @font-face {
   font-family: "Nunito";
-  src: url(/vinwebside/fonts/Nunito-Regular.ttf) format("truetype");
+  src: url(vinwebside/fonts/Nunito-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -213,10 +199,13 @@ footer {
 h1{
   font-family: "Oregano", sans-serif;
   font-weight: 100;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   overflow-wrap: break-word;
+  hyphens: auto;
 }
 
-h2 {
+h2{
  font-family: "DM sans", sans-serif;
   font-weight: 100;
   font-size: 2rem;
@@ -227,7 +216,7 @@ h2 {
 h3{
   font-family: "Oregano", sans-serif;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -235,23 +224,41 @@ h3{
 
 p, a, footer {
   font-family: "Nunito", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
   justify-content: flex-end;
   hyphens: auto;
-
+  white-space: pre-line;
 }
+.copy{ max-width: 64ch; }
+.copy p{ line-height:1.6; }
+
+.overskrift{
+justify-items: center; 
+padding-bottom: 2rem;
+}
+
 /*************** Vin oversigt siderne ******************/
 /* produkt-oversigt */
+
+
 .produkter {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 24px;
-  max-width: 1200px;                     
+  gap: 10px;
+  max-width: 1400px;                     
   margin: 0 auto;
   text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+ 
 .product .flasker {
   width: auto;   
   max-width: 180px; 
@@ -264,51 +271,45 @@ p, a, footer {
   margin: 8px auto 0;
 }
 
+.product > :last-child {
+  margin-bottom: auto;
+  justify-items: end;
+}
+
+
+
 /* Tablet */
 @media (max-width: 900px) {
   .produkter { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(2, 1fr);}
 }
 /* Mobil */
 @media (max-width: 560px) {
   .produkter { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: repeat(2, 1fr);}
 }
 
-/* Produkt-side skelet */
 .product-grid {
   display: grid;
-  gap: 28px;
+  grid-template-columns: 1fr 340px 1fr; 
+  padding-right: 20px;
+  gap: 30px;
+  align-items: start;
 }
 
-/* Mobil først: én kolonne */
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-}
-.pris_kasse {
-  display: flex;
-  justify-items: baseline;
-  }
-
-/* Desktop: 3 kolonner som i skitsen */
-@media (min-width: 900px) {
-  .product-grid {
-    grid-template-columns: 320px 1fr 1.2fr; /* venstre / flaske / tekst */
-    align-items: start;
-  }
+.product-copy{
+display: grid;
+justify-items: center;
+padding: 18px;
 }
 
-/* Billedstørrelser – overstyrer global img{width:100%} */
-.overskrift{
-justify-items: center; 
-padding-bottom: 2rem;
-
-}
-
+/******* siden for enkel vine*******/
 .bottle img {
   width: auto;
-  max-width: 800px;    /* justér til din skitse */
-  margin: 0 auto;      /* centrer flasken i kolonnen */
-  display: block;
+  max-width: 400px;    
+  margin: 0 auto;      
+  display: flex;
+  padding: 30px;
 }
 .priskasse {
  display: flex;
@@ -340,36 +341,165 @@ padding-bottom: 2rem;
 
 
 .sidebar h3 { margin-bottom: 8px; }
-.sidebar .btn-cart { margin: 8px 0 18px; }
+.sidebar .btn-cart { margin: 10px 0 10px; }
 .sidebar h2 { margin: 12px 0 8px; }
-
-
 .copy p { line-height: 1,9; }
 
-
-
-
-
-
-
-.grid_1 {
-   display: grid;
+@media (max-width: 840px) {
+  
+  .product-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
-     .div {
-  padding: 25px 50px 75px;
-}
-}
+    gap: 10px;
+    padding: auto; }
+
+  .bottle img  {
+     grid-template-columns: 1fr;}
+  
+ .priskasse {
+    grid-template-columns: 1fr 1fr;
+  justify-self: center;}
+  }
 
 
+
+/*****************  Santa Julia   *******************/
+
+
+
+@media (min-width: 840px) {
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
+    padding: auto; }
+    
+  .grid_1-1 .profil {
+    justify-self: center;
   }
+ .grid_1-1 .kort {
+    grid-template-columns: 1fr;
+  }
+}
+
+ .grid_1-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 10px;
+  }
+
+ .grid_1-1 .profil img{
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.top-row{
+display: grid;
+grid-template-columns: 340px 1fr;
+gap: 40px;
+align-items: start;
+}
+
+.under-row{  
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  gap: 30px;
+}
  
 
 
+
+/* Kort-rækken */
+.kort-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-items: center;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.kort-row figure {
+  max-width: 400px;
+  text-align: center;
+}
+
+.kort-row img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.kort-row figcaption {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.kort-row p {
+  margin-top: 6px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Responsiv til mobil/tablet */
+@media (max-width: 900px) {
+  .grid_1-1 { grid-template-columns: 1fr; }
+  .profil { justify-self: center; }
+  .kort-row { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+.copy_1{
+display: table-cell;
+justify-items: center;
+padding: 18px;
+}
+
+
+
+
+.copy_drurer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+
+ .grid_1-1 .kort{
+  grid-column: 1 /-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+  margin-top: 40px;
+}
+ 
+
+
+
+
+ .kort img{max-width :320px; height: auto; display: block;}
+ .kort figcaption{text-align: center; margin-top: 6px;}
+
+
+ /* Responsivt: stack på mobil/tablet */
+@media (max-width: 900px){
+  .grid_1-1{ grid-template-columns: 1fr; }
+  .profil{ justify-self:center; }
+  .copy{ max-width: 70ch; }
+  .top-row { grid-template-columns: 1fr; }
+  .under-row { grid-template-columns: 1fr; }
+  .kort{ grid-template-columns: 1fr; }
+  .copy_1{ display: table-column-group; }
+ 
+}
 
 /****** Burger menu ******/
 header {
@@ -380,7 +510,6 @@ header {
   align-items: center;
   padding: 20px;
   background-color: #F8F5ED;
-  
 }
 
 .logo img {
@@ -480,22 +609,5 @@ nav {
   nav.active .menu a {
     font-size: 24px;
   }
+  footer { display: none;}
 }
-
-@media (min-width: 840px) {
-  .grid_1{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-  }
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .order {
-    order: -1;
-  }
-}
-
